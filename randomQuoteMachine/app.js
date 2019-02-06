@@ -3,6 +3,7 @@ $(document).ready(function() {
 });
 
 let body = document.body
+let quoteBox_div=document.getElementById("quote-box")
 let text_div=document.getElementById("text");
 let author_div=document.getElementById("author");
 let newQuote_div=document.getElementById("new-quote");
@@ -25,6 +26,9 @@ function updateQuote() {
   $(author_div).fadeOut(fadeTime,function(){
       $(this).text('- '+author).fadeIn(fadeTime);
     });
+  $(quoteBox_div).fadeOut(fadeTime,function(){
+        $(this).fadeIn(fadeTime);
+  });
   let newColor = randnElement(colorList)
   $(body).animate({backgroundColor: newColor}, fadeTime*2);
   $(newQuote_div).animate({backgroundColor: newColor}, fadeTime*2);
